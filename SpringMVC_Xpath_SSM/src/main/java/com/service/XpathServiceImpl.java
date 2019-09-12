@@ -163,9 +163,7 @@ public class XpathServiceImpl implements IXpathService {
         String xpath = "" ;
         for(int m = 0 ; m < arrNew.length; m++){
             //重新拼接xpath生成想要的最终结果
-            //System.out.println(m+" "+arrNew[m]);
             xpath = xpath+arrNew[m]+"/";
-            // System.out.println(xpath);
         }
         //-1 去掉xpath中最后的/
         String last_xpath =xpath.substring(0,xpath.length()-1);
