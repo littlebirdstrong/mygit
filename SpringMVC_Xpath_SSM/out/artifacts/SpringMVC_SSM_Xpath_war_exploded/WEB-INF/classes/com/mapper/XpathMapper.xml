@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.XpathMapper">
+    <!-- 新增数据 -->
+    <!-- <insert id="addXpath" parameterType="com.bean.XpathBean">
+        insert into xpath (name,type,xpath) values (#{name},#{type},#{xpath})
+    </insert> -->
+    <select id="getXpathList" parameterType="String" resultType="com.bean.XpathBean">
+        select * from xpath
+    </select>
+
+    <insert id="insertXpath"  parameterType="com.bean.XpathBean">
+    insert into xpath (name,type,xpath) values (#{name},#{type},#{xpath})
+ </insert>
+
+</mapper>
