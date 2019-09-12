@@ -89,6 +89,7 @@ public class XpathServiceImpl implements IXpathService {
         }
         return  list;
     }
+    //自己玩
     public  List<String> getElements(Elements elements,String xpath) {//获取入口id
 
         for(int i = 0 ; i < elements.size() ; i++){//判断几个节点
