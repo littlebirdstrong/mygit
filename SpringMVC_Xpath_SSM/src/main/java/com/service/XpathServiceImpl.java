@@ -46,11 +46,11 @@ public class XpathServiceImpl implements IXpathService {
         }else {
             Elements elements = document.select("html");
             String first_xpath = "/html/";
-            return getHtml(elements,first_xpath,id_Name);
+            return getHtml(elements,first_xpath);
         }
 
     }
-    public List<String> getHtml(Elements elements,String xpath,String fileName){//获取节点html,没有名字
+    public List<String> getHtml(Elements elements,String xpath){//获取节点html,没有名字
         for(int i = 0 ; i < elements.size() ; i++){//判断几个节点
             //取当前节点的信息
             String tag ="" ; ////*[@id="hp-search"]/div[1]/div[1]/label
@@ -72,7 +72,7 @@ public class XpathServiceImpl implements IXpathService {
             Elements childrenElements = elements.get(i).children();//获取当 期节点的儿子节点
             if(childrenElements.size() > 0){//判断是否有儿子节点
                 //循环调用方法获得子节点
-                getHtml(childrenElements,tag,fileName);
+                getHtml(childrenElements,tag);
 
             }else {
                 //将得到的xpath以"/"进行分组
@@ -89,7 +89,6 @@ public class XpathServiceImpl implements IXpathService {
         }
         return  list;
     }
-    //自己玩
     public  List<String> getElements(Elements elements,String xpath) {//获取入口id
 
         for(int i = 0 ; i < elements.size() ; i++){//判断几个节点
@@ -200,6 +199,7 @@ public class XpathServiceImpl implements IXpathService {
 
     //查询结果数据
     public List<XpathBean> getXpathList(){
+
         return xpathMapper.getXpathList();
     }
 }
